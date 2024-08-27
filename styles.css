@@ -15,6 +15,13 @@ body {
     overflow: hidden;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    touch-action: manipulation; /* Prevents zoom and scroll on touch */
+    overflow: hidden;
+}
+
 .countdown-container {
     text-align: center;
     color: #fffc98;

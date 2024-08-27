@@ -22,6 +22,11 @@ const countdownInterval = setInterval(() => {
     }
 }, 1000);
 
+// Prevent touch-based scrolling and zooming
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
 // Heart burst effect with sound
 document.addEventListener('click', function(event) {
     const heart = document.createElement('div');
