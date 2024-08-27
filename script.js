@@ -1,10 +1,10 @@
 // Set the date we're counting down to
-const meetingDate = new Date('2024-09-15:03:30'); // Replace with the actual date and time
+const meetingDate = new Date('2024-09-15T03:30:00'); // Use ISO 8601 format
 
 // Update the countdown every second
 const countdownInterval = setInterval(() => {
     const now = new Date().getTime();
-    const distance = meetingDate - now;
+    const distance = meetingDate.getTime() - now;
 
     if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -21,11 +21,6 @@ const countdownInterval = setInterval(() => {
         document.getElementById('countdown').innerText = "The time has come!";
     }
 }, 1000);
-
-// Prevent touch-based scrolling and zooming
-document.addEventListener('touchstart', function(event) {
-    event.preventDefault();
-}, { passive: false });
 
 // Heart burst effect with sound
 document.addEventListener('click', function(event) {
